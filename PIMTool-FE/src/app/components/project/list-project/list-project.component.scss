@@ -79,7 +79,8 @@
           th {
             font-size: 13pt;
             color: #666;
-            font-weight: 200;
+            font-weight: 400;
+            background-color: #fff;
           }
         }
       }
@@ -116,11 +117,11 @@
       margin-left: 18px;
     }
     .select-right {
-      margin-right: 2%;
-      ion-icon {
-        width: 18.66px;
+      margin-right: 0.7%;
+      span.pi.pi-trash.p-button-icon.ng-star-inserted {
+        width: 16.66px;
         height: 18.66px;
-        cursor: pointer;
+        margin-bottom: 2px;
       }
     }
   }

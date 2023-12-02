@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { project } from '../models/project';
 import { statusEnum } from '../enums/statusEnum';
@@ -10,6 +10,8 @@ export class ProjectService {
   private apiGetUrl = 'https://localhost:5001/api/Project';
   private apiSearchUrl = 'https://localhost:5001/api/projects/filter';
   private apiDeleteUrl = 'https://localhost:5001/api/Project';
+  private apiDeleteProjectsUrl =
+    'https://localhost:5001/api/projects/delete-projects';
   private apiIsProjectNumberExisted =
     'https://localhost:5001/api/projects/isExist';
   private apiGetProjectByIdUrl = 'https://localhost:5001/api/Project';
@@ -65,6 +67,18 @@ export class ProjectService {
 
   deleteProject(projectId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiDeleteUrl}/${projectId}`);
+  }
+
+  deleteProjects(projectIds: number[]): Observable<any> {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.http.request<any>('delete', this.apiDeleteProjectsUrl, {
+      ...options,
+      body: projectIds,
+    });
   }
 
   getEmployeeInProject(projectId: number): Observable<any> {

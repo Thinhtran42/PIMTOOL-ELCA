@@ -35,28 +35,28 @@
         <p-table [value]="projects" [tableStyle]="{ width: '100%' }">
             <ng-template pTemplate="header">
                 <tr>
-                    <th style="width: 4.5%;"></th>
+                    <th class="left" style="width: 4.5%;"></th>
                     <th pSortableColumn="projectNumber" style="width: 8%">
                         Number
                         <p-sortIcon field="projectNumber"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="name" style="width: 30%">
+                    <th class="left" pSortableColumn="name" style="width: 30%">
                         Name
                         <p-sortIcon field="name"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="status" style="width: 10%">
+                    <th class="left" pSortableColumn="status" style="width: 10%">
                         Status
                         <p-sortIcon field="status"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="customer" style="width: 20%">
+                    <th class="left" pSortableColumn="customer" style="width: 20%">
                         Customer
                         <p-sortIcon field="customer"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="startDate" style="width: 10%">
+                    <th class="left" pSortableColumn="startDate" style="width: 10%">
                         Start Date
                         <p-sortIcon field="startDate"></p-sortIcon>
                     </th>
-                    <th style="width: 5%">Delete</th>
+                    <th class="left" style="width: 5%">Delete</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-project>
@@ -64,15 +64,15 @@
                     <td style="width: 4.5%; height: 32px">
                         <input type="checkbox" style="width: 15px; height: 15px; opacity: 0.8" (click)="toggleProjectSelection(project.id)" />
                     </td>
-                    <td style="width: 8%">
+                    <td class="right" style="width: 8%">
                         <a (click)="navigateToProjectDetail(project.id)">
                           {{ project.projectNumber }}
                         </a>
                     </td>
-                    <td style="width: 30%">{{ project.name }}</td>
-                    <td style="width: 10%">{{ project.status | statusEnumToString }}</td>
-                    <td style="width: 20%">{{ project.customer }}</td>
-                    <td style="width: 10%">
+                    <td class="left" style="width: 30%">{{ project.name }}</td>
+                    <td class="left" style="width: 10%">{{ project.status | statusEnumToString }}</td>
+                    <td class="left" style="width: 20%">{{ project.customer }}</td>
+                    <td class="left" style="width: 10%">
                         {{ project.startDate | date : "dd-MM-yyyy" }}
                     </td>
                     <td style="width: 5%">
@@ -91,7 +91,7 @@
         <div class="select-right">
             <p style="color: red">
                 delete selected items
-                <ion-icon style="color: red" name="trash-outline"></ion-icon>
+                <p-button (click)="confirmDeleteProjects()" icon="pi pi-trash" class="p-button-danger"></p-button>
             </p>
         </div>
     </div>

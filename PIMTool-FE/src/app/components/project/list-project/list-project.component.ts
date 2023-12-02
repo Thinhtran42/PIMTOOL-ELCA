@@ -137,7 +137,7 @@ export class ListProjectComponent implements OnInit, OnDestroy {
       icon: 'pi pi-info-circle',
       accept: () => {
         this.messageService.add({
-          severity: 'info',
+          severity: 'success',
           summary: 'Confirmed',
           detail: 'Record deleted',
         });
@@ -166,6 +166,44 @@ export class ListProjectComponent implements OnInit, OnDestroy {
       },
     });
   }
+
+  confirmDeleteProjects() {
+    this.confirmationService.confirm({
+      message: 'Do you want to delete this record?',
+      header: 'Delete Confirmation',
+      icon: 'pi pi-info-circle',
+      accept: () => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Confirmed',
+          detail: 'Record deleted',
+        });
+        console.log('onDelete Called');
+        this.onDeleteProjects();
+      },
+      reject: (type: any) => {
+        switch (type) {
+          case ConfirmEventType.REJECT:
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Rejected',
+              detail: 'You have rejected',
+            });
+            console.log('Rejected call');
+            break;
+          case ConfirmEventType.CANCEL:
+            this.messageService.add({
+              severity: 'warn',
+              summary: 'Cancelled',
+              detail: 'You have cancelled',
+            });
+            console.log('Cancel call');
+            break;
+        }
+      },
+    });
+  }
+
   onDeleteProject(projectId: number) {
     this.projectService.deleteProject(projectId).subscribe(
       (response) => {
@@ -174,6 +212,19 @@ export class ListProjectComponent implements OnInit, OnDestroy {
       },
       (error) => {
         console.log('Error when delete project', error);
+      }
+    );
+  }
+
+  onDeleteProjects() {
+    this.projectService.deleteProjects(this.selectedProjects).subscribe(
+      (response) => {
+        this.selectedProjects = [];
+        console.log('Projects deleted successfully');
+        this.getAllProject();
+      },
+      (error) => {
+        console.log('Error when delete list projects', error);
       }
     );
   }
