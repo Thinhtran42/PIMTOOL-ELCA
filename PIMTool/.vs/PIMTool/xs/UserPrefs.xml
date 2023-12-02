@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{FCAF16BE-1A1A-4809-BE81-9183DC76AF1F}|WebAPI Develop Enviroment">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Apis/Application/Services/ProjectService.cs">
+    <Files>
+      <File FileName="Apis/Application/Services/ProjectService.cs" Line="391" Column="47" />
+      <File FileName="Apis/WebAPI/Controllers/ProjectController.cs" />
+      <File FileName="Apis/WebAPI/Program.cs" />
+      <File FileName="Apis/Application/ViewModels/ProjectViewModels/UpdateProjectViewModel.cs" />
+      <File FileName="Apis/Application/ViewModels/ProjectViewModels/CreateProjectViewModel.cs" />
+      <File FileName="Apis/Application/Interfaces/Services/IProjectService.cs" />
+      <File FileName="Apis/Application/ViewModels/ProjectViewModels/ProjectViewModel.cs" />
+      <File FileName="Apis/Application/Services/CurrentTime.cs" />
+      <File FileName="Apis/WebAPI/Middlewares/PerformanceMiddleware.cs" />
+      <File FileName="Apis/WebAPI/Controllers/EmployeeController.cs" />
+      <File FileName="Apis/Application/Interfaces/Services/IEmployeeService.cs" />
+      <File FileName="Apis/Application/Services/EmployeeService.cs" />
+      <File FileName="Apis/Infrastructures/Mappers/MapperConfigurationsProfile.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PIMTool" expanded="True">
+            <Node name="Apis" expanded="True">
+              <Node name="Application">
+                <Node name="Services" expanded="True">
+                  <Node name="ProjectService.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Apis.WebAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/thinhtran/Documents/ELCA-Resource-PIMTool/PIMTool/src/PIMTool/Apis/Application/Services/ProjectService.cs" relfile="Apis/Application/Services/ProjectService.cs" line="117" column="1" />
+      <Breakpoint file="/Users/thinhtran/Documents/ELCA-Resource-PIMTool/PIMTool/src/PIMTool/Apis/Application/Services/ProjectService.cs" relfile="Apis/Application/Services/ProjectService.cs" line="341" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
